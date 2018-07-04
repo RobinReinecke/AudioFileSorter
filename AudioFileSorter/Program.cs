@@ -147,6 +147,8 @@ namespace AudioFileSorter
             ProcessDirectory();
 
             Console.WriteLine("\n\nFinished");
+
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -243,16 +245,16 @@ namespace AudioFileSorter
                 {
                     File.Move(file, destination);
                     if (output_moves) { 
-                        Console.Write("Moved ");
+                        Console.Write("Moved: ");
                         Console.Write(Path.GetFileName(destination), Color.Aqua);
-                        Console.Write(" with Title: ");
+                        Console.Write("\nTitle: ");
                         Console.Write(title, Color.Aqua);
-                        Console.Write(" and artist: ");
+                        Console.Write("\nArtist: ");
                         Console.Write(albumArtist, Color.Aqua);
-                        Console.Write(" and Album: ");
+                        Console.Write("\nAlbum: ");
                         Console.Write(album, Color.Aqua);
-                        Console.Write(" to ");
-                        Console.Write(destination, Color.Tomato);
+                        Console.Write("\nTo: ");
+                        Console.Write(destination + "\n\n", Color.Tomato);
 
                     }
                     WriteToLog("Moved " + file + " to " + destination + "\n");
